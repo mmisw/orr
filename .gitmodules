@@ -1,0 +1,6 @@
+[submodule "orr-ont"]
+	path = orr-ont
+	url = https://github.com/mmisw/orr-ont.git
+[submodule "orr-portal"]
+	path = orr-portal
+	url = https://github.com/mmisw/orr-portal.git
