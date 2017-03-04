@@ -1,12 +1,22 @@
 # ORR - Ontology Registry and Repository
 
-**under construction**
+For developers, this is a parent repo intended to facilitate the build 
+of the integrated backend and frontend components comprising the ORR system.
 
-For developers, this is a parent repo intended to facilitate the integration of 
-the backend and frontend components of the ORR system:  
-[orr-ont](https://github.com/mmisw/orr-ont) 
-and 
-[orr-portal](https://github.com/mmisw/orr-portal).
+| component | description |
+|-----------|-------------|
+| [orr-ont](https://github.com/mmisw/orr-ont)       | Backend  | 
+| [orr-portal](https://github.com/mmisw/orr-portal) | Frontend |
 
-The creation of the artifacts for a full installation is currently done 
-via some manual steps directly on those two components. 
+For end-users, documentation is located at 
+[http://mmisw.org/orrdoc/](http://mmisw.org/orrdoc/).
+
+Interested in having an ORR instance on your server? See 
+[http://mmisw.org/orrdoc/install/](http://mmisw.org/orrdoc/install/).
+
+
+## Build 
+
+```
+$ ./build.sh 3.3.3
+```

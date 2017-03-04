@@ -1,0 +1,14 @@
+Dockerfile
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/build/target/
+project/plugins/project/
+
+node_modules/
+local.config.js
+vendor/
