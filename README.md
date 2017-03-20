@@ -5,8 +5,8 @@ of the integrated backend and frontend components comprising the ORR system.
 
 | component | description |
 |-----------|-------------|
-| [orr-ont](https://github.com/mmisw/orr-ont)       | Backend  | 
-| [orr-portal](https://github.com/mmisw/orr-portal) | Frontend |
+| [orr-ont](https://github.com/mmisw/orr-ont)       | Backend / REST endpoint |
+| [orr-portal](https://github.com/mmisw/orr-portal) | Front-end |
 
 For end-users, documentation is located at 
 [http://mmisw.org/orrdoc/](http://mmisw.org/orrdoc/).
