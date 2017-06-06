@@ -17,16 +17,21 @@ of the integrated backend and frontend components comprising the ORR system.
 | [orr-portal](https://github.com/mmisw/orr-portal) | Front-end |
 
 For end-users, documentation is located at 
-[http://mmisw.org/orrdoc/](http://mmisw.org/orrdoc/).
+[https://mmisw.org/orrdoc/](https://mmisw.org/orrdoc/).
 
 Interested in having an ORR instance on your server? See 
-[http://mmisw.org/orrdoc/install/](http://mmisw.org/orrdoc/install/).
+[https://mmisw.org/orrdoc/install/](https://mmisw.org/orrdoc/install/).
 
 
 ## Build 
 
-Example:
 
-```
-$ ./build.sh 3.3.3
-```
+- `$ git submodule foreach "(git checkout master; git pull)"`
+- `$ git submodule update`
+- Check submodule versions and determine version for integrated system 
+- `$ ./build.sh 3.6.2`
+
+
+This builds the complete ORR system: 
+- WAR `orr-ont/target/scala-2.11/orr-ont_2.11-3.x.y.war`
+- Docker image: `mmisw/orr:3.x.y`
