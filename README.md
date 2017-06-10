@@ -27,9 +27,8 @@ Interested in having an ORR instance on your server? See
 
 
 - `$ git submodule foreach "(git checkout master; git pull)"`
-- `$ git submodule update`
 - Check submodule versions and determine version for integrated system 
-- `$ ./build.sh 3.6.2`
+- `$ ./build.sh 3.x.y`
 
 
 This builds the complete ORR system: 
