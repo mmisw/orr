@@ -12,23 +12,35 @@ For end-users, documentation is located at
 
 ----
 
-For developers, this is a parent repo to facilitate the build 
-of the integrated backend and frontend components comprising the ORR system.
+For developers, this is a parent repo that facilitates the build of the 
+integrated ORR system comprising its backend and frontend components,
+which are referenced via git submodules:
 
 | component | description |
 |-----------|-------------|
-| [orr-ont](https://github.com/mmisw/orr-ont)       | Backend/REST endpoint |
-| [orr-portal](https://github.com/mmisw/orr-portal) | Frontend |
+| [https://github.com/mmisw/orr-ont](https://github.com/mmisw/orr-ont)       | Backend |
+| [https://github.com/mmisw/orr-portal](https://github.com/mmisw/orr-portal) | Frontend |
 
+Actual code development occurs within those repos.
 
 ## Build 
 
+Two deployable ORR artifacts are built in this repo: WAR and Docker image.
+The steps are:
 
 - `$ git submodule foreach "(git checkout master; git pull)"`
-- Check submodule versions and determine version for integrated system 
+- Check submodule versions and determine version for integrated system
+  (as an example, `3.x.y` in what follows).
 - `$ ./build.sh 3.x.y`
 
-
-This builds the complete ORR system: 
-- WAR `orr-ont/target/scala-2.11/orr-ont_2.11-3.x.y.war`
+This creates: 
+- WAR:          `orr-ont/target/scala-2.11/orr-ont_2.11-3.x.y.war`
 - Docker image: `mmisw/orr:3.x.y`
+
+Publishing the Docker image:
+- `docker login`
+- `docker push mmisw/orr:3.x.y`
+
+Finally:
+- `git add -u`
+- `git commit -m "update orr-portal and orr-ont pointers and build v.3.x.y"`
