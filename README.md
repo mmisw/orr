@@ -43,4 +43,7 @@ Publishing the Docker image:
 
 Finally:
 - `git add -u`
-- `git commit -m "update orr-portal and orr-ont pointers and build v.3.x.y"`
+- `git commit -m "update orr-portal and orr-ont pointers and build v3.x.y"`
+- `git push origin master`
+- `git tag v3.x.y"`
+- `git push origin v3.x.y`

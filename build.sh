@@ -7,7 +7,7 @@ function usage() {
 	echo "For the moment, try to indicate a version that aligns with those of the components."
 	echo
 	echo "Example:"
-	echo "  ./build.sh 3.6.2"
+	echo "  ./build.sh 3.6.5"
 	echo
 	exit
 }
@@ -42,8 +42,7 @@ function package_orr_ont {
 }
 
 function dockerize {
-    cat Dockerfile.in | sed "s/@@version/$version/g" > ./Dockerfile
-    docker build -t "mmisw/orr:$version" --no-cache .
+    docker build --build-arg version=${version} -t "mmisw/orr:$version" --no-cache .
 }
 
 main
