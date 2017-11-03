@@ -57,6 +57,6 @@ Finally:
 git add -u
 git commit -m "update orr-portal and orr-ont pointers and build v${ORR_VERSION}"
 git push origin master
-git tag v${ORR_VERSION}"
-git push origin v${ORR_VERSION}
+git tag "v${ORR_VERSION}"
+git push origin "v${ORR_VERSION}"
 ```
