@@ -28,22 +28,35 @@ Actual code development occurs within those repos.
 Two deployable ORR artifacts are built in this repo: WAR and Docker image.
 The steps are:
 
-- `$ git submodule foreach "(git checkout master; git pull)"`
-- Check submodule versions and determine version for integrated system
-  (as an example, `3.x.y` in what follows).
-- `$ ./build.sh 3.x.y`
+```
+git submodule foreach "(git checkout master; git pull)"
+```
+
+Check submodule versions and determine version for integrated system,
+for example, `3.x.y`, which we assumed captured in `ORR_VERSION` in what follows.
+
+```
+ORR_VERSION=3.x.y
+./build.sh ${ORR_VERSION}
+```
 
 This creates: 
-- WAR:          `orr-ont/target/scala-2.11/orr-ont_2.11-3.x.y.war`
-- Docker image: `mmisw/orr:3.x.y`
+- WAR:          `orr-ont/target/scala-2.11/orr-ont_2.11-${ORR_VERSION}.war`
+- Docker image: `mmisw/orr:${ORR_VERSION}`
 
 Publishing the Docker image:
-- `docker login`
-- `docker push mmisw/orr:3.x.y`
+
+```
+docker login
+docker push mmisw/orr:${ORR_VERSION}
+```
 
 Finally:
-- `git add -u`
-- `git commit -m "update orr-portal and orr-ont pointers and build v3.x.y"`
-- `git push origin master`
-- `git tag v3.x.y"`
-- `git push origin v3.x.y`
+
+```
+git add -u
+git commit -m "update orr-portal and orr-ont pointers and build v${ORR_VERSION}"
+git push origin master
+git tag v${ORR_VERSION}"
+git push origin v${ORR_VERSION}
+```
