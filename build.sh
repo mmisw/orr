@@ -4,10 +4,10 @@ function usage() {
 	echo "Usage:"
 	echo "  ./build.sh <version>"
 	echo
-	echo "For the moment, try to indicate a version that aligns with those of the components."
+	echo "Indicate a version that aligns with those of the components."
 	echo
 	echo "Example:"
-	echo "  ./build.sh 3.6.5"
+	echo "  ./build.sh 3.7.0"
 	echo
 	exit
 }
