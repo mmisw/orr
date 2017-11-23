@@ -55,8 +55,10 @@ Finally:
 
 ```
 git add -u
-git commit -m "update orr-portal and orr-ont pointers and build v${ORR_VERSION}"
+git commit -m "build v${ORR_VERSION}"
 git push origin master
 git tag "v${ORR_VERSION}"
 git push origin "v${ORR_VERSION}"
 ```
+
+And, create release at https://github.com/mmisw/orr/releases with the WAR file.

@@ -22,12 +22,14 @@ set -e
 set -u
 
 function main {
+    echo "building $version"
     package_orr_portal
     package_orr_ont
     dockerize
 }
 
 function package_orr_portal {
+    echo "packaging orr-portal"
     # that is, "install" orr-portal under orr-ont's webapp dir
     cd orr-portal
     npm install
@@ -36,12 +38,14 @@ function package_orr_portal {
 }
 
 function package_orr_ont {
+    echo "packaging orr-ont"
     cd orr-ont
     sbt8 test package
     cd ..
 }
 
 function dockerize {
+    echo "building image mmisw/orr:$version"
     docker build --build-arg version=${version} -t "mmisw/orr:$version" --no-cache .
 }
 
