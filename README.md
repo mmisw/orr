@@ -7,12 +7,12 @@ Current funding is provided by the U.S. National Science Foundation through the
 [Cross-Domain Observational Metadata for Environmental Sensing (X-DOMES) project](
 https://www.earthcube.org/group/x-domes).
 
-For end-users, documentation is located at 
+For end-users, documentation is located at
 [https://mmisw.org/orrdoc/](https://mmisw.org/orrdoc/).
 
 ----
 
-For developers, this is a parent repo that facilitates the build of the 
+For developers, this is a parent repo that facilitates the build of the
 integrated ORR system comprising its backend and frontend components,
 which are referenced via git submodules:
 
@@ -23,10 +23,13 @@ which are referenced via git submodules:
 
 Actual code development occurs within those repos.
 
-## Build 
+## Build
 
 Two deployable ORR artifacts are built in this repo: WAR and Docker image.
 The steps are:
+
+**NOTE** A MongoDB server must be running locally (on port 27017)
+for the tests done during the orr-ont build.
 
 ```
 git submodule foreach "(git checkout master; git pull)"
@@ -40,7 +43,18 @@ ORR_VERSION=3.x.y
 ./build.sh ${ORR_VERSION}
 ```
 
-This creates: 
+**NOTE**:  If the actual version of the backend component (orr-ont)
+is different, then pass a second argument, eg:
+
+```
+ORR_VERSION=3.x.y
+./build.sh ${ORR_VERSION} 3.7.0
+```
+
+Example of complete output
+[here](https://gist.github.com/carueda/980020ffa0662a11a3a129b8a1274a2f).
+
+This creates:
 - WAR:          `orr-ont/target/scala-2.11/orr-ont_2.11-${ORR_VERSION}.war`
 - Docker image: `mmisw/orr:${ORR_VERSION}`
 

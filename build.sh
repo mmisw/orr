@@ -2,12 +2,13 @@
 
 function usage() {
 	echo "Usage:"
-	echo "  ./build.sh <version>"
+	echo "  ./build.sh <version> [ <orrOntVersion> ]"
 	echo
-	echo "Indicate a version that aligns with those of the components."
+	echo "<version>       Desired version for the ORR image"
+	echo "<orrOntVersion> Version of orr-ont component"
 	echo
 	echo "Example:"
-	echo "  ./build.sh 3.7.0"
+	echo "  ./build.sh 3.7.2 3.7.0"
 	echo
 	exit
 }
@@ -17,12 +18,16 @@ version=$1
 if [ "$version" == "" ]; then
 	usage
 fi
+orrOntVersion=$2
+if [ "$orrOntVersion" == "" ]; then
+	orrOntVersion=${version}
+fi
 
 set -e
 set -u
 
 function main {
-    echo "building $version"
+    echo "building $version  (orrOntVersion=${orrOntVersion})"
     package_orr_portal
     package_orr_ont
     dockerize
@@ -40,13 +45,14 @@ function package_orr_portal {
 function package_orr_ont {
     echo "packaging orr-ont"
     cd orr-ont
-    sbt8 test package
+    sbt test package
     cd ..
 }
 
 function dockerize {
     echo "building image mmisw/orr:$version"
-    docker build --build-arg version=${version} -t "mmisw/orr:$version" --no-cache .
+    docker build --build-arg orrOntVersion=${orrOntVersion} \
+           -t "mmisw/orr:$version" --no-cache .
 }
 
 main
