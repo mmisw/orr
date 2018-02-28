@@ -44,18 +44,19 @@ ORR_VERSION=3.x.y
 ```
 
 **NOTE**:  If the actual version of the backend component (orr-ont)
-is different, then pass a second argument, eg:
+is different, then pass a second argument with its value, eg:
 
 ```
 ORR_VERSION=3.x.y
-./build.sh ${ORR_VERSION} 3.7.0
+BACKEND_VERSION=3.w.z
+./build.sh ${ORR_VERSION} ${BACKEND_VERSION}
 ```
 
 Example of complete output
 [here](https://gist.github.com/carueda/980020ffa0662a11a3a129b8a1274a2f).
 
 This creates:
-- WAR:          `orr-ont/target/scala-2.11/orr-ont_2.11-${ORR_VERSION}.war`
+- WAR:          `orr-ont/target/scala-2.11/orr-ont_2.11-${BACKEND_VERSION}.war`
 - Docker image: `mmisw/orr:${ORR_VERSION}`
 
 Publishing the Docker image:
@@ -75,4 +76,6 @@ git tag "v${ORR_VERSION}"
 git push origin "v${ORR_VERSION}"
 ```
 
-And, create release at https://github.com/mmisw/orr/releases with the WAR file.
+If a new backend as been built according to `${BACKEND_VERSION}`,
+then create a corresponding release at https://github.com/mmisw/orr/releases
+with the WAR file.
