@@ -76,6 +76,6 @@ git tag "v${ORR_VERSION}"
 git push origin "v${ORR_VERSION}"
 ```
 
-If a new backend as been built according to `${BACKEND_VERSION}`,
+If a new backend has been built according to `${BACKEND_VERSION}`,
 then create a corresponding release at https://github.com/mmisw/orr/releases
 with the WAR file.
