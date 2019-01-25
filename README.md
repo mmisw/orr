@@ -34,6 +34,8 @@ for the tests done during the orr-ont build.
 ```
 git submodule foreach "(git checkout master; git pull)"
 ```
+Note, you may need to use ```git submodule update --init --recursive``` if ther above command has no effect.
+
 
 Check submodule versions and determine version for integrated system,
 for example, `3.x.y`, which we assumed captured in `ORR_VERSION` in what follows.
