@@ -23,30 +23,67 @@ which are referenced via git submodules:
 
 Actual code development occurs within those repos.
 
+## Clone
+
+For a fresh clone of this repo on your system, you can run the following
+to fetch everything including submodules:
+
+```
+git clone --recursive https://github.com/mmisw/orr.git
+```
+
+If you have already cloned this repo but forgot the `--recursive` flag,
+then run:
+
+```
+git submodule update --init --recursive
+```
+
 ## Build
 
-Two deployable ORR artifacts are built in this repo: WAR and Docker image.
-The steps are:
+**NOTE**: A MongoDB server must be running locally (on port 27017)
+for the tests done during the orr-ont build below.
+(You can take a look at the [travis spec](https://github.com/mmisw/orr-ont/blob/master/.travis.yml)
+and the [builds at Travis](https://travis-ci.org/mmisw/orr-ont).)
 
-**NOTE** A MongoDB server must be running locally (on port 27017)
-for the tests done during the orr-ont build.
+Two deployable ORR artifacts are built in this repo: WAR and Docker image.
+
+The typical sequence of steps to build a new ORR version reflecting
+latest submodule changes is as follows:
 
 ```
 git submodule foreach "(git checkout master; git pull)"
 ```
-Note, you may need to use ```git submodule update --init --recursive``` if ther above command has no effect.
 
+Check the submodule versions and determine the version for integrated system,
+for example, `3.x.y`.  Typically this is going to be the version of the
+orr-portal module as this is the one displayed to the end user in the frontend.
 
-Check submodule versions and determine version for integrated system,
-for example, `3.x.y`, which we assumed captured in `ORR_VERSION` in what follows.
+We assume the version for the integrated ORR system to be captured in
+`ORR_VERSION` in what follows.
 
 ```
 ORR_VERSION=3.x.y
+```
+
+The `./build.sh` script that we will be running in a moment takes care of
+building the whole system. This script expects one or two arguments.
+The first argument is the version for the ORR integrated system.
+So, we will use `${ORR_VERSION}` for this.
+The second argument is only required is the version of the backend
+component (orr-ont) is different:
+
+```
+BACKEND_VERSION=3.w.z
+```
+
+Then, run `./build.sh` accordingly, that is, either:
+
+```
 ./build.sh ${ORR_VERSION}
 ```
 
-**NOTE**:  If the actual version of the backend component (orr-ont)
-is different, then pass a second argument with its value, eg:
+or:
 
 ```
 ORR_VERSION=3.x.y
@@ -78,6 +115,6 @@ git tag "v${ORR_VERSION}"
 git push origin "v${ORR_VERSION}"
 ```
 
-If a new backend has been built according to `${BACKEND_VERSION}`,
-then create a corresponding release at https://github.com/mmisw/orr/releases
-with the WAR file.
+If a new backend system has been built according to `${BACKEND_VERSION}`
+as described above, then create a corresponding release at
+https://github.com/mmisw/orr/releases with the WAR file.
