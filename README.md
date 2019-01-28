@@ -46,7 +46,10 @@ for the tests done during the orr-ont build below.
 (You can take a look at the [travis spec](https://github.com/mmisw/orr-ont/blob/master/.travis.yml)
 and the [builds at Travis](https://travis-ci.org/mmisw/orr-ont).)
 
-Two deployable ORR artifacts are built in this repo: WAR and Docker image.
+Two deployable ORR artifacts are built in this repo:
+[WAR](https://github.com/mmisw/orr/releases)
+and
+[Docker image](https://cloud.docker.com/u/mmisw/repository/docker/mmisw/orr).
 
 The typical sequence of steps to build a new ORR version reflecting
 latest submodule changes is as follows:
@@ -55,7 +58,7 @@ latest submodule changes is as follows:
 git submodule foreach "(git checkout master; git pull)"
 ```
 
-Check the submodule versions and determine the version for integrated system,
+Check the submodule versions and determine the version for the integrated system,
 for example, `3.x.y`.  Typically this is going to be the version of the
 orr-portal module as this is the one displayed to the end user in the frontend.
 
@@ -70,7 +73,7 @@ The `./build.sh` script that we will be running in a moment takes care of
 building the whole system. This script expects one or two arguments.
 The first argument is the version for the ORR integrated system.
 So, we will use `${ORR_VERSION}` for this.
-The second argument is only required is the version of the backend
+The second argument is only required if the version of the backend
 component (orr-ont) is different:
 
 ```
@@ -86,8 +89,6 @@ Then, run `./build.sh` accordingly, that is, either:
 or:
 
 ```
-ORR_VERSION=3.x.y
-BACKEND_VERSION=3.w.z
 ./build.sh ${ORR_VERSION} ${BACKEND_VERSION}
 ```
 
