@@ -1,3 +1,6 @@
+[![](https://images.microbadger.com/badges/version/mmisw/orr.svg)](https://microbadger.com/images/mmisw/orr "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/mmisw/orr.svg)](https://microbadger.com/images/mmisw/orr "Get your own image badge on microbadger.com")
+
 # ORR - Ontology Registry and Repository
 
 The Ontology Registry and Repository (ORR) integrates semantic web services and tools
