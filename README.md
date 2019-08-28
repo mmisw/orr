@@ -122,3 +122,9 @@ git push origin "v${ORR_VERSION}"
 If a new backend system has been built according to `${BACKEND_VERSION}`
 as described above, then create a corresponding release at
 https://github.com/mmisw/orr/releases with the WAR file.
+
+# Versions
+
+- ORR docker image 3.8.5:
+    - orr-portal 3.8.3
+    - orr-ont 3.8.3
