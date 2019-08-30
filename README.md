@@ -125,6 +125,10 @@ https://github.com/mmisw/orr/releases with the WAR file.
 
 # Versions
 
+- ORR docker image 3.8.6:
+    - orr-portal 3.8.6
+    - orr-ont 3.8.3
+
 - ORR docker image 3.8.5:
     - orr-portal 3.8.3
     - orr-ont 3.8.3
