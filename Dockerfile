@@ -1,4 +1,4 @@
-FROM tomcat:8.5-jre8
+FROM tomcat:8.5.45-jdk11-openjdk-slim
 
 MAINTAINER Carlos Rueda <carueda@gmail.com>
 
