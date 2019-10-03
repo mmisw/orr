@@ -125,6 +125,10 @@ https://github.com/mmisw/orr/releases with the WAR file.
 
 # Versions
 
+- ORR docker image 3.8.8:
+    - orr-portal 3.8.8
+    - orr-ont 3.8.3
+
 - ORR docker image 3.8.7 (now on top of `tomcat:8.5.45-jdk11-openjdk-slim`):
     - orr-portal 3.8.7
     - orr-ont 3.8.3
