@@ -1,5 +1,5 @@
-[![](https://images.microbadger.com/badges/version/mmisw/orr.svg)](https://microbadger.com/images/mmisw/orr "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/mmisw/orr.svg)](https://microbadger.com/images/mmisw/orr "Get your own image badge on microbadger.com")
+[![](https://img.shields.io/docker/cloud/build/mmisw/orr)](https://hub.docker.com/r/mmisw/orr)
+[![](https://img.shields.io/docker/cloud/automated/mmisw/orr)](https://hub.docker.com/r/mmisw/orr)
 
 # ORR - Ontology Registry and Repository
 
