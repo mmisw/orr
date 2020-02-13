@@ -1,7 +1,7 @@
 #
 # builder
 #
-# (using jdk8 duw to some sbt error during building with jdk11)
+# (using jdk8 due to some sbt error when building with jdk11)
 FROM tomcat:8.5.45-jdk8-openjdk-slim AS builder
 
 RUN apt update \
@@ -20,7 +20,7 @@ RUN apt update \
 COPY orr-portal /orr-portal
 COPY orr-ont /orr-ont
 
-# frontend first so it "installs" itself in backend source:
+# frontend first so it "installs" itself in the backend source:
 RUN cd /orr-portal/ \
  && npm install \
  && gulp install --base=/ont/ --dest=/orr-ont/src/main/webapp/
