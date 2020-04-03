@@ -34,6 +34,8 @@ RUN cd /orr-ont/ \
 #
 FROM tomcat:8.5.45-jdk11-openjdk-slim
 
-COPY --from=builder /orr-ont/target/scala-2.11/orr-ont_*.war /usr/local/tomcat/webapps/ont.war
+ARG orrOntVersion
+
+COPY --from=builder /orr-ont/target/scala-2.11/orr-ont_2.11-${orrOntVersion}.war /usr/local/tomcat/webapps/ont.war
 
 RUN mkdir -p /opt/orr-ont-base-directory

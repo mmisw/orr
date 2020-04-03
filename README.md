@@ -95,12 +95,10 @@ or:
 ./build.sh ${ORR_VERSION} ${BACKEND_VERSION}
 ```
 
+**NOTE**: This may take several minutes to complete.
+
 Example of complete output
 [here](https://gist.github.com/carueda/980020ffa0662a11a3a129b8a1274a2f).
-
-This creates:
-- WAR:          `orr-ont/target/scala-2.11/orr-ont_2.11-${BACKEND_VERSION}.war`
-- Docker image: `mmisw/orr:${ORR_VERSION}`
 
 Publishing the Docker image:
 
@@ -119,11 +117,11 @@ git tag "v${ORR_VERSION}"
 git push origin "v${ORR_VERSION}"
 ```
 
-If a new backend system has been built according to `${BACKEND_VERSION}`
-as described above, then create a corresponding release at
-https://github.com/mmisw/orr/releases with the WAR file.
-
 # Versions
+
+- ORR docker image 3.9.0:
+    - orr-portal 3.9.0
+    - orr-ont 3.8.3
 
 - ORR docker image 3.8.8:
     - orr-portal 3.8.8
