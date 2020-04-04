@@ -115,8 +115,8 @@ git push origin "v${ORR_VERSION}"
 > This section may not always be up-to-date,
 > please check https://hub.docker.com/repository/docker/mmisw/orr for the latest version.
 
-- ORR docker image 3.9.1:
-    - orr-portal 3.9.1
+- ORR docker image 3.9.2:
+    - orr-portal 3.9.2
     - orr-ont 3.8.3
 
 - ORR docker image 3.8.8:
