@@ -119,8 +119,8 @@ git push origin "v${ORR_VERSION}"
 
 # Versions
 
-- ORR docker image 3.9.0:
-    - orr-portal 3.9.0
+- ORR docker image 3.9.1:
+    - orr-portal 3.9.1
     - orr-ont 3.8.3
 
 - ORR docker image 3.8.8:
