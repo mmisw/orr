@@ -44,15 +44,8 @@ git submodule update --init --recursive
 
 ## Build
 
-**NOTE**: A MongoDB server must be running locally (on port 27017)
-for the tests done during the orr-ont build below.
-(You can take a look at the [travis spec](https://github.com/mmisw/orr-ont/blob/master/.travis.yml)
-and the [builds at Travis](https://travis-ci.org/mmisw/orr-ont).)
-
-Two deployable ORR artifacts are built in this repo:
-[WAR](https://github.com/mmisw/orr/releases)
-and
-[Docker image](https://cloud.docker.com/u/mmisw/repository/docker/mmisw/orr).
+The main deployable ORR artifact that is built in this repo is the
+[mmisw/orr docker image](https://cloud.docker.com/u/mmisw/repository/docker/mmisw/orr).
 
 The typical sequence of steps to build a new ORR version reflecting
 latest submodule changes is as follows:
@@ -117,7 +110,10 @@ git tag "v${ORR_VERSION}"
 git push origin "v${ORR_VERSION}"
 ```
 
-# Versions
+### Versions
+
+> This section may not always be up-to-date,
+> please check https://hub.docker.com/repository/docker/mmisw/orr for the latest version.
 
 - ORR docker image 3.9.1:
     - orr-portal 3.9.1
