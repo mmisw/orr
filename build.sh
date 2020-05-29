@@ -8,7 +8,7 @@ function usage() {
 	echo "<orrOntVersion> Version of orr-ont component"
 	echo
 	echo "Example:    (but see README)"
-	echo "  ./build.sh  3.9.0  3.8.3"
+	echo "  ./build.sh ${ORR_VERSION} ${BACKEND_VERSION}"
 	echo
 	exit
 }

@@ -44,6 +44,16 @@ git submodule update --init --recursive
 
 ## Build
 
+### Base image
+
+```
+docker build -f base.Dockerfile -t "mmisw/orr-base:2020-05-29" .
+
+docker push "mmisw/orr-base:2020-05-29"
+```
+
+## ORR image
+
 The main deployable ORR artifact that is built in this repo is the
 [mmisw/orr docker image](https://cloud.docker.com/u/mmisw/repository/docker/mmisw/orr).
 
@@ -54,12 +64,13 @@ latest submodule changes is as follows:
 git submodule foreach "(git checkout master; git pull)"
 ```
 
-Check the submodule versions and determine the version for the integrated system,
+Check the submodule versions to determine the version for the integrated system,
 for example, `3.x.y`.  Typically this is going to be the version of the
-orr-portal module as this is the one displayed to the end user in the frontend.
+orr-portal module (see `version` entry in [orr-portal/package.json](orr-portal/package.json))
+as this is the one displayed to the end user in the frontend.
 
-We assume the version for the integrated ORR system to be captured in
-`ORR_VERSION` in what follows.
+We assume such version for the integrated ORR system is captured in the
+`ORR_VERSION` environment variable in what follows.
 
 ```
 ORR_VERSION=3.x.y
@@ -70,7 +81,8 @@ building the whole system. This script expects one or two arguments.
 The first argument is the version for the ORR integrated system.
 So, we will use `${ORR_VERSION}` for this.
 The second argument is only required if the version of the backend
-component (orr-ont) is different:
+component (see `build.Version` entry in [orr-ont/project/build.scala](orr-ont/project/build.scala))
+is different:
 
 ```
 BACKEND_VERSION=3.w.z
@@ -109,28 +121,3 @@ git push origin master
 git tag "v${ORR_VERSION}"
 git push origin "v${ORR_VERSION}"
 ```
-
-### Versions
-
-> This section may not always be up-to-date,
-> please check https://hub.docker.com/repository/docker/mmisw/orr for the latest version.
-
-- ORR docker image 3.9.2:
-    - orr-portal 3.9.2
-    - orr-ont 3.8.3
-
-- ORR docker image 3.8.8:
-    - orr-portal 3.8.8
-    - orr-ont 3.8.3
-
-- ORR docker image 3.8.7 (now on top of `tomcat:8.5.45-jdk11-openjdk-slim`):
-    - orr-portal 3.8.7
-    - orr-ont 3.8.3
-
-- ORR docker image 3.8.6:
-    - orr-portal 3.8.6
-    - orr-ont 3.8.3
-
-- ORR docker image 3.8.5:
-    - orr-portal 3.8.3
-    - orr-ont 3.8.3
