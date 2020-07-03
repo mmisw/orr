@@ -55,7 +55,7 @@ docker push "mmisw/orr-base:2020-05-29"
 ## ORR image
 
 The main deployable ORR artifact that is built in this repo is the
-[mmisw/orr docker image](https://cloud.docker.com/u/mmisw/repository/docker/mmisw/orr).
+[mmisw/orr docker image](https://hub.docker.com/r/mmisw/orr).
 
 The typical sequence of steps to build a new ORR version reflecting
 latest submodule changes is as follows:
