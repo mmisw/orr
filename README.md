@@ -47,9 +47,9 @@ git submodule update --init --recursive
 ### Base image
 
 ```
-docker build -f base.Dockerfile -t "mmisw/orr-base:2020-05-29" .
+docker build -f base.Dockerfile -t "mmisw/orr-base:2020-09-12" .
 
-docker push "mmisw/orr-base:2020-05-29"
+docker push "mmisw/orr-base:2020-09-12"
 ```
 
 ## ORR image

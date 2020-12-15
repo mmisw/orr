@@ -1,4 +1,4 @@
-FROM mmisw/orr-base:2020-05-29
+FROM mmisw/orr-base:2020-09-12
 
 COPY orr-portal /orr-portal
 COPY orr-ont /orr-ont
