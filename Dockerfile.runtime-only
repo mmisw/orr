@@ -4,8 +4,4 @@ FROM tomcat:8.5-jdk8-openjdk-slim
 # Copy pre-built WAR file
 COPY orr-ont/target/scala-2.11/orr-ont_2.11-*.war /usr/local/tomcat/webapps/ont.war
 
-# Create necessary directories and copy configuration
-RUN mkdir -p /opt/orr-ont-base-directory /etc/orront
-COPY orront.conf /etc/orront/
-
 EXPOSE 8080
